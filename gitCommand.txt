@@ -1,0 +1,32 @@
+#해당 디렉토리 git 생성
+git init
+
+#해당 파일 더하기
+git add fileName.etc 
+#전체 파일 더하기
+git add .
+# 현재 더한 상황 comment 로 commit 하기
+git commit -m "comment"
+#origin 에서 내용 가져오기
+git fetch origin branchName
+git pull origin branchName
+
+#원격 오리진 저장소 추가
+git remote add origin address
+
+#올리기
+git push origin branchName
+
+#branch 변경
+git checkout -b branchName
+git branch branchName - git branch #현재 브랜치 확인
+
+#원격 저장소 clone
+git clone address
+
+#etc
+git reset --hard, --soft
+git log
+git log --pretty=oneline
+
+
