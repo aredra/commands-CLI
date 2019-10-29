@@ -27,13 +27,25 @@ git branch branchName - git branch #현재 브랜치 확인
 #원격 저장소 clone
 git clone address
 
+#fork 저장소를 통째로 복제하여 repository를 새로 만듬
+#pull request(PR) 에 fork 및 branch에서 merge 요청
+
 #compare와 base merge
 git merge compareBranch - baseBranch에서 작업
 
+#feat/기능이름, fix/버그이름, hotfix/급한버그
+#dev, master, release branch는 커밋하지 않는다, merge만 하는 걸 권장
+
 #etc
+git rebase //conflict가 안나는 상태로
+git amend //좀 전 커밋에 살짝 추가
+git cherry-pick // 커밋 하나만 지금 브랜치에 붙임
+git reverse //변경사항만 되돌림
+git stash // 변경사항을 잠시 keep
 git reset --hard, --soft
 git log
 git log --pretty=oneline
+gitk
 
 #conflict
 <<<< HEAD
