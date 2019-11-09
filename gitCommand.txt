@@ -16,7 +16,6 @@ git commit -m "comment"
 
 # origin 에서 내용 가져오기
 git fetch origin branchName
-
 git pull origin branchName
 
 # 원격 오리진 저장소 추가
