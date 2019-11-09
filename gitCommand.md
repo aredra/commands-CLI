@@ -4,6 +4,9 @@
 #해당 디렉토리 git 생성
 git init
 
+#README.md 생성
+echo "#repository name readme!" >> README.md
+
 #해당 파일 스테이지에 올리기
 git add fileName.etc 
 #전체 파일 스테이지에 올리기
@@ -24,6 +27,9 @@ git push origin branchName
 git checkout -b branchName
 git branch branchName - git branch #현재 브랜치 확인
 
+#branch 삭제
+git branch -d branchName
+
 #원격 저장소 clone
 git clone address
 
@@ -32,6 +38,8 @@ git clone address
 
 #compare와 base merge
 git merge compareBranch - baseBranch에서 작업
+git mergetool
+git status
 
 #feat/기능이름, fix/버그이름, hotfix/급한버그
 #dev, master, release branch는 커밋하지 않는다, merge만 하는 걸 권장
