@@ -1,50 +1,52 @@
-#로컬pc - workspace - 로컬저장소(.git) - stage - commit - push
-#stage에 없을 경우 새로 생성된 파일의 경우 tracking 되지 않음
+# 로컬pc - workspace - 로컬저장소(.git) - stage - commit - push
+# stage에 없을 경우 새로 생성된 파일의 경우 tracking 되지 않음
 
-#해당 디렉토리 git 생성
+# 해당 디렉토리 git 생성
 git init
 
-#README.md 생성
+# README.md 생성
 echo "#repository name readme!" >> README.md
 
-#해당 파일 스테이지에 올리기
+# 파일 스테이지에 올리기
 git add fileName.etc 
-#전체 파일 스테이지에 올리기
 git add .
+
 # 현재 스테이지 상황 comment 로 commit 하기
 git commit -m "comment"
-#origin 에서 내용 가져오기
+
+# origin 에서 내용 가져오기
 git fetch origin branchName
+
 git pull origin branchName
 
-#원격 오리진 저장소 추가
+# 원격 오리진 저장소 추가
 git remote add origin address
 
-#올리기
+# 올리기
 git push origin branchName
 
-#branch 변경
+# branch 변경
 git checkout -b branchName
 git branch branchName - git branch #현재 브랜치 확인
 
-#branch 삭제
+# branch 삭제
 git branch -d branchName
 
-#원격 저장소 clone
+# 원격 저장소 clone
 git clone address
 
-#fork 저장소를 통째로 복제하여 repository를 새로 만듬
-#pull request(PR) 에 fork 및 branch에서 merge 요청
+# fork 저장소를 통째로 복제하여 repository를 새로 만듬
+# pull request(PR) 에 fork 및 branch에서 merge 요청
 
-#compare와 base merge
+# compare와 base merge
 git merge compareBranch - baseBranch에서 작업
 git mergetool
 git status
 
-#feat/기능이름, fix/버그이름, hotfix/급한버그
-#dev, master, release branch는 커밋하지 않는다, merge만 하는 걸 권장
+# feat/기능이름, fix/버그이름, hotfix/급한버그
+# dev, master, release branch는 커밋하지 않는다, merge만 하는 걸 권장
 
-#etc
+# etc
 git rebase //conflict가 안나는 상태로
 git amend //좀 전 커밋에 살짝 추가
 git cherry-pick // 커밋 하나만 지금 브랜치에 붙임
@@ -55,10 +57,10 @@ git log
 git log --pretty=oneline
 gitk
 
-#conflict
+# conflict
 <<<< HEAD
 asdfasdf    - baseBranch
-====
+
 zxczcxvz    - compareBranch
  >>>> compare
 
