@@ -1,6 +1,10 @@
 # 로컬pc - workspace - 로컬저장소(.git) - stage - commit - push
 # stage에 없을 경우 새로 생성된 파일의 경우 tracking 되지 않음
 
+# 계정정보 수정
+git config --global user.name name
+git config --local user.email email
+
 # 해당 디렉토리 git 생성
 git init
 
