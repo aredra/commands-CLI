@@ -46,6 +46,9 @@ git merge compareBranch - baseBranch에서 작업
 git mergetool
 git status
 
+# git cash 삭제
+git rm -r --cached .
+
 # feat/기능이름, fix/버그이름, hotfix/급한버그
 # dev, master, release branch는 커밋하지 않는다, merge만 하는 걸 권장
 
