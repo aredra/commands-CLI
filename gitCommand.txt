@@ -29,9 +29,20 @@ git remote remove origin
 # 올리기
 git push origin branchName
 
+# stage 취소
+git reset HEAD fileName
+
+# 커밋 취소
+git reset --soft HEAD^  //commit 취소 staging
+git reset --mixed           //commit staging 취소
+git reset --hard             //commit 취소 파일 삭제
+
+# commit message  변경
+git commit --amend
+
 # branch 변경
 git checkout -b branchName
-git branch branchName - git branch #현재 브랜치 확인
+git branch branchName //git branch 현재 브랜치 확인
 
 # branch 삭제
 git branch -d branchName

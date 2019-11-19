@@ -1,0 +1,10 @@
+yarn start
+yarn run fix
+
+yarn global add serve
+serve -s build
+
+npm start
+npm install --save
+
+npx serve ./build
