@@ -22,8 +22,9 @@ git commit -m "comment"
 git fetch origin branchName
 git pull origin branchName
 
-# 원격 오리진 저장소 추가
+# 원격 오리진 저장소 추가, 삭제
 git remote add origin address
+git remote remove origin
 
 # 올리기
 git push origin branchName
