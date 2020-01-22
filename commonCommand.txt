@@ -1,0 +1,28 @@
+#brew
+brew --help
+brew search htop
+brew install htop
+brew update
+brew upgrade vim
+
+#Download
+wget address-url
+git clone
+
+#IO Redirection
+ls -l > result.log === ls -l 1> result.log
+ll 2> log.txt
+rm foo 1> result.txt 2> error.txt
+
+cat < hello.txt
+cat > hello.txt
+
+#append
+ls -al >> log.txt
+
+# << 다수의 Input
+mail mail@domain.com << EOT
+
+#etc
+head -n1 name.txt === head -n1 < name.txt
+head -n1 < name.txt > headline.txt
