@@ -26,3 +26,31 @@ mail mail@domain.com << EOT
 #etc
 head -n1 name.txt === head -n1 < name.txt
 head -n1 < name.txt > headline.txt
+
+#연결 연산자 ;
+ls;pwd
+
+#echo
+echo "hello'
+echo $0 - 현재의 쉘 확인
+
+#bash VS zsh - 부모는 같으며, zsh가 더 많은 기능을 제공
+
+#touch - 파일 생성
+touch a.log b.log c.log
+
+#파일 복사
+cp *.log bak
+
+#명령어들 위치
+/bin
+
+#script sample
+#!/bin/bash
+if ! [ -d bak ]; then
+        mkdir bak
+fi
+cp *.log bak
+
+#파일에 실행권한 주기
+chmod +x backup
