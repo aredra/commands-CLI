@@ -46,7 +46,7 @@ cp *.log bak
 /bin
 
 #script sample
-#!/bin/bash
+#!/bin/bash - bash로 만들었다.
 if ! [ -d bak ]; then
         mkdir bak
 fi
@@ -54,3 +54,8 @@ cp *.log bak
 
 #파일에 실행권한 주기
 chmod +x backup
+
+#파일 검색
+locate *.log
+find . -name test.txt
+whereis
