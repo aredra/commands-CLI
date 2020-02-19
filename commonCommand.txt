@@ -59,3 +59,15 @@ chmod +x backup
 locate *.log
 find . -name test.txt
 whereis
+
+#OS 및 버전 확인
+uname -a
+cat /etc/*release*
+
+#파일 설치
+rpm                             //의존성 요구
+rpm -ivh 소스명         //진행상황 확인하며 설치
+rpm -qa | grep name     //패키지 설치 유무 확인
+rpm -e name                     //삭제
+
+yum - rpm 의존성 불필요 버전
