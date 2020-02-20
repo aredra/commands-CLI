@@ -8,3 +8,10 @@ npm start
 npm install --save
 
 npx serve ./build
+
+nvm use version-name
+nvm list
+nvm --version
+nvm uninstall version-name
+nvm ls-remote
+nvm alias default version-name // 버전 기본값 설정
