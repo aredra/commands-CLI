@@ -71,3 +71,6 @@ rpm -qa | grep name     //패키지 설치 유무 확인
 rpm -e name                     //삭제
 
 yum - rpm 의존성 불필요 버전
+
+#프로세스 검색
+ps aux | grep ${target}
