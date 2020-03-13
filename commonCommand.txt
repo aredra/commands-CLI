@@ -101,3 +101,12 @@ tail -f ~/log.log
 
 #alias
 alias ll = 'ls -al' //대소문자 구별함
+
+#사용자 및 추가
+id
+who
+su - root
+sudo passwd -u / l root
+useradd -m username //sudo로 해야됨
+passwd username
+sudo usermod -a -G sudo username //user에게 sudo 권한 주기
