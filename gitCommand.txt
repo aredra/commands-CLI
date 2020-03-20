@@ -25,6 +25,7 @@ git pull origin branchName
 # 원격 오리진 저장소 추가, 삭제
 git remote add origin address
 git remote remove origin
+git remote -v
 
 # 올리기
 git push origin branchName
