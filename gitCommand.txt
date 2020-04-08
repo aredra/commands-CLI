@@ -44,6 +44,8 @@ git commit --amend
 # branch 변경
 git checkout -b branchName
 git branch branchName //git branch 현재 브랜치 확인
+git branch -r //원격 브랜치 확인
+git checkout -t origin/branchName // 원격브랜치 가져와서 로컬브랜치 생성 및 교체
 
 # branch 삭제
 git branch -d branchName

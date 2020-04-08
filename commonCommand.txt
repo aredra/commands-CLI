@@ -9,7 +9,12 @@ brew upgrade vim
 wget address-url
 git clone
 
-#IO Redirection
+#파일 읽기
+tail -f filename // 실시간 로그 볼 때 많이 씀
+cat filename
+vi
+
+#IO Redirect
 ls -l > result.log === ls -l 1> result.log
 ll 2> log.txt
 rm foo 1> result.txt 2> error.txt
