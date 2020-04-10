@@ -117,3 +117,6 @@ sudo passwd -u / l root
 useradd -m username //sudo로 해야됨
 passwd username
 sudo usermod -a -G sudo username //user에게 sudo 권한 주기
+
+#http 메시지 확인
+curl -i https://helloworld.com
