@@ -27,6 +27,9 @@ git remote add origin address
 git remote remove origin
 git remote -v
 
+#git 현재 hash 값 확인
+git rev-parse --short HEAD
+
 # 올리기
 git push origin branchName
 

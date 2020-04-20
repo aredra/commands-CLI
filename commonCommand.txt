@@ -31,6 +31,7 @@ mail mail@domain.com << EOT
 #etc
 head -n1 name.txt === head -n1 < name.txt
 head -n1 < name.txt > headline.txt
+!!      //이전 실행 명령어
 
 #연결 연산자 ;
 ls;pwd
@@ -61,6 +62,7 @@ cp *.log bak
 #파일에 실행권한 주기
 chmod +x backup
 chmod 600 ${target}
+chown -R owner:group 
 
 #파일 검색
 locate *.log
@@ -117,6 +119,8 @@ sudo passwd -u / l root
 useradd -m username //sudo로 해야됨
 passwd username
 sudo usermod -a -G sudo username //user에게 sudo 권한 주기
+usermod -a -G groupname username
+groupadd groupname
 
 #http 메시지 확인
 curl -i https://helloworld.com

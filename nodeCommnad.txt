@@ -10,9 +10,11 @@ serve -s build
 npm start
 npm install --save
 npm install -D webpack webpack-cli
+npm install @babel/core @babel/cli
 
 npx serve ./build
 npx lite-server
+npx babel app.js --plugins './my-babel-plugin.js'
 
 nvm use version-name
 nvm list
