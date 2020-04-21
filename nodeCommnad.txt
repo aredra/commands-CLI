@@ -15,6 +15,9 @@ npm install @babel/core @babel/cli
 npx serve ./build
 npx lite-server
 npx babel app.js --plugins './my-babel-plugin.js'
+npx webpack --config webpack.dll.config.js
+npx eslint --fix src/**/*.js
+npx cross-env NODE_ENV=development 
 
 nvm use version-name
 nvm list
