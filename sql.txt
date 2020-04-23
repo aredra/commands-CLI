@@ -1,0 +1,4 @@
+alter user myuser with password 'password';
+create database mydb;
+create user myuser with password 'password';
+grant all privileges on database mydb to myuser;

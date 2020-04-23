@@ -91,6 +91,7 @@ lsof -i tcp
 netstat -antp | grep ${target}
 nslookup
 jobs
+free -h
 
 #background 프로세스 && daemon
 ctrl + z //백그라운드로 넘기기
@@ -122,5 +123,16 @@ sudo usermod -a -G sudo username //user에게 sudo 권한 주기
 usermod -a -G groupname username
 groupadd groupname
 
-#http 메시지 확인
+#http 메시지 확인, 인터넷 연결 확인
 curl -i https://helloworld.com
+dig
+telnet 127.0.0.1 8080
+ping
+
+#원격 접속 및 파일 전송
+ssh -i ./key.pem user@127.0.0.1
+scp -i ./key.pem -r ~/dir user@127.0.01:/data/home/dir
+
+#postgres
+sudo -u postgres psql
+psql -u postgres -d dbName -h localhost
