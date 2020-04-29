@@ -6,6 +6,11 @@ brew update
 brew upgrade vim
 
 #Download
+apt-cache search fileName
+apt-get update
+apt-get install fileName
+apt-get remove
+apt-get purge
 wget address-url
 git clone
 
@@ -136,3 +141,4 @@ scp -i ./key.pem -r ~/dir user@127.0.01:/data/home/dir
 #postgres
 sudo -u postgres psql
 psql -u postgres -d dbName -h localhost
+
