@@ -43,6 +43,7 @@ git reset --hard             //commit 취소 파일 삭제
 
 # commit message  변경
 git commit --amend
+  529  git commit --allow-empty -m "test"
 
 # branch 변경
 git checkout -b branchName
