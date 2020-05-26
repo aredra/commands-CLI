@@ -140,5 +140,11 @@ scp -i ./key.pem -r ~/dir user@127.0.01:/data/home/dir
 
 #postgres
 sudo -u postgres psql
-psql -u postgres -d dbName -h localhost
+psql -u postgres -d dbName -h localh  window.addEventListener("load", function(event) {
+    // here is the Vue code
+  });ost
 
+#ip
+ip addr 
+ip route 
+ifconfig
