@@ -2,3 +2,13 @@ alter user myuser with password 'password';
 create database mydb;
 create user myuser with password 'password';
 grant all privileges on database mydb to myuser;
+
+#psql
+# 세션 찾기
+select * from pg_stat_activity where datname='name';
+#pid로 세션 제거
+select pg_terminate_backend(pid);
+
+explain sql
+select * from table for update
+union minus intersect
