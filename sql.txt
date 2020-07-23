@@ -13,5 +13,5 @@ explain sql
 select * from table for update
 union minus intersect
 
-pg_dump -Fc -Z 9 -b -C backup
+pg_dump -h localhost -p 5432 -U postgres -Fc -Z 9 -b -C backup
 pg_restore -v -h localhost -U postgres -p 8080 -C -d backup -F c /backup-20200528.cdmp

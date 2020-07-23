@@ -50,6 +50,7 @@ echo 'hellow world' > test.txt
 
 #touch - 파일 생성
 touch a.log b.log c.log
+touch test{1..10}
 
 #파일 복사
 cp *.log bak
@@ -133,18 +134,26 @@ curl -i https://helloworld.com
 dig
 telnet 127.0.0.1 8080
 ping
+dig +trace google.com
 
 #원격 접속 및 파일 전송
+~/.ssh
+ssh-keygen
+ssh-copy-id user@localhost
+
 ssh -i ./key.pem user@127.0.0.1
 scp -i ./key.pem -r ~/dir user@127.0.01:/data/home/dir
 
+
 #postgres
 sudo -u postgres psql
-psql -u postgres -d dbName -h localh  window.addEventListener("load", function(event) {
-    // here is the Vue code
-  });ost
+psql -u postgres -d dbName -h localhost
 
 #ip
 ip addr 
 ip route 
 ifconfig
+
+#rsync - ssh network
+rsync -a src dest
+rsync -avzP src/ dest
