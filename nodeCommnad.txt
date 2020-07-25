@@ -1,6 +1,10 @@
 npm init
 npm init -y     //기본 설정으로 인스톨
 
+npm outdated
+npm update
+npm audit fix
+
 yarn start
 yarn run fix
 
