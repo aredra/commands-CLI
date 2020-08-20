@@ -88,8 +88,11 @@ git cherry-pick // 커밋 하나만 지금 브랜치에 붙임
 git reverse //변경사항만 되돌림
 git stash // 변경사항을 잠시 keep
 git reset --hard, --soft
+git revert commitNum -m 부모넘버
+git reflog
 git log
 git log --pretty=oneline
+git log --oneline --graph
 gitk
 
 # conflict
