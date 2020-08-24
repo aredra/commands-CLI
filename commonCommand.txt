@@ -135,6 +135,7 @@ dig
 telnet 127.0.0.1 8080
 ping
 dig +trace google.com
+netstat -an -ptcp | grep LISTEN
 
 #원격 접속 및 파일 전송
 ~/.ssh
@@ -144,6 +145,8 @@ ssh-copy-id user@localhost
 ssh -i ./key.pem user@127.0.0.1
 scp -i ./key.pem -r ~/dir user@127.0.01:/data/home/dir
 
+#port포워딩
+ssh hostname -L post:hostname2:destination-port
 
 #postgres
 sudo -u postgres psql
