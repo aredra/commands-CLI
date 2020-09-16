@@ -1,4 +1,6 @@
 #brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" // brew  설치
+
 brew --help
 brew search htop
 brew install htop
@@ -13,10 +15,10 @@ apt-get remove
 apt-get purge
 wget address-url
 git clone
-
 #파일 읽기
 tail -f filename // 실시간 로그 볼 때 많이 씀
 cat filename
+
 vi
 
 #IO Redirect
@@ -164,3 +166,7 @@ rsync -avzP src/ dest
 #nginx 관련
 ls -lZd /home/test/
 chcon -R -t httpd_sys_content_t /home/test/
+
+#자바 설치 - brew
+brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk8
