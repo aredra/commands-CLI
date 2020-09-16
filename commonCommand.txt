@@ -160,3 +160,7 @@ ifconfig
 #rsync - ssh network
 rsync -a src dest
 rsync -avzP src/ dest
+
+#nginx 관련
+ls -lZd /home/test/
+chcon -R -t httpd_sys_content_t /home/test/
