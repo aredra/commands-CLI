@@ -90,7 +90,7 @@ rpm -e name                     //삭제
 
 yum - rpm 의존성 불필요 버전
 
-#프로세스, 자원 검색
+#프로세스, 자원 메모리 검색
 ps aux | grep ${target}
 top
 htop //Load average: 프로세스 점유율 관련 동작해야되는 프로세스 수 ${1분} ${5분} ${15분}
@@ -100,6 +100,10 @@ netstat -antp | grep ${target}
 nslookup
 jobs
 free -h
+ionice -c 2 -n 7 nice -n 19 top -c
+sar -u 3 10 //cpu 사용량
+vmstat 1 10 //cpu 사용률
+ps aux --sort=-%cpu
 
 #background 프로세스 && daemon
 ctrl + z //백그라운드로 넘기기
@@ -170,3 +174,11 @@ chcon -R -t httpd_sys_content_t /home/test/
 #자바 설치 - brew
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
+
+#서버 가동시간 확인
+uptime
+
+#시스템 오류 메세지 확인
+dmesg | tail
+cat /var/log/messages | egrep -i "emerg|alert|crit|error|warn|fail"
+cat /var/log/secure | tail
