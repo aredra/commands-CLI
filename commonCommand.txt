@@ -83,6 +83,9 @@ uname -a
 cat /etc/*release*
 
 #파일 설치
+yum install wget
+yum install lsof
+
 rpm                             //의존성 요구
 rpm -ivh 소스명         //진행상황 확인하며 설치
 rpm -qa | grep name     //패키지 설치 유무 확인
@@ -182,3 +185,13 @@ uptime
 dmesg | tail
 cat /var/log/messages | egrep -i "emerg|alert|crit|error|warn|fail"
 cat /var/log/secure | tail
+
+#let's encrypt 설치 
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+./certbot-auto
+cd /etc/letsencrypt/live
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+01 01 1 * * root certbot -q renew --nginx --renew-hook 'service nginx reload' >> /logs/certbot.log 2>&1
