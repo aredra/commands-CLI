@@ -1,22 +1,33 @@
+# 유저 생성 및 권한 부여
+```
 alter user myuser with password 'password';
 create database mydb;
 create user myuser with password 'password';
 grant all privileges on database mydb to myuser;
-
-#psql
+```
+# 완전 삭제
+```
+rm -rf /usr/local/var/postgres && initdb /usr/local/var/postgres -E utf8
+```
+# 실행
+```
+pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+```
 # 세션 찾기
+```
 select * from pg_stat_activity where datname='name';
-#pid로 세션 제거
+```
+# pid로 세션 제거
+```
 select pg_terminate_backend(pid);
-
-explain sql
-select * from table for update
-union minus intersect
-
+```
+# postgres dump 및 복구
+```
 pg_dump -h localhost -p 5432 -U postgres -Fc -Z 9 -b -C backup
 pg_restore -v -h localhost -U postgres -p 8080 -C -d backup -F c /backup-20200528.cdmp
-
+```
 # pk 안 걸린 테이블 조회
+```
 select 
 table_name
 from information_schema."tables"
@@ -50,3 +61,10 @@ from
 		order by t.table_name
 	) a
 ) b;
+```
+# etc
+```
+explain sql
+select * from table for update
+union minus intersect
+```
