@@ -83,6 +83,7 @@ mysql -u username -p databasename
 mysql -u root [-p password]
 status
 explain databases
+ALTER USER 'id'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password' //접속시 caching_sha2_password 날 때
 ```
 
 # etc
