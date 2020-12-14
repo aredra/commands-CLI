@@ -79,6 +79,7 @@ from
 # mysql 기본 명령어
 
 ```
+mysql.server start // mac mysql 서버 시작
 mysql -u username -p databasename
 mysql -u root [-p password]
 status
