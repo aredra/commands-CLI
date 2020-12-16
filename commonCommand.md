@@ -41,6 +41,11 @@ ls -al >> log.txt
 ```
 mail mail@domain.com << EOT
 ```
+# 파일리스트 보기
+```
+ls | less // 혹은 more
+ls -d /* // 디렉토리 보기 
+```
 # etc
 ```
 head -n1 name.txt === head -n1 < name.txt

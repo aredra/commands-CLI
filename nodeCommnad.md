@@ -1,3 +1,5 @@
+# node 관련 기본 명령어
+```
 npm init
 npm init -y     //기본 설정으로 인스톨
 
@@ -21,6 +23,7 @@ npm i -D eslint-config-prettier
 npm i -D eslint-plugin-prettier
 npm i husky
 npm i lint-staged
+npm i lodash.throttle
 
 npx serve ./build
 npx lite-server
@@ -42,3 +45,4 @@ nvm alias default version-name // 버전 기본값 설정
 open index.html
 
 node_modules/.bin/webpack --mode development --entry ./src/app.js --output dist/main.js
+```

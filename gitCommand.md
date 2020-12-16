@@ -37,6 +37,7 @@ git pull origin branchName
 git remote add origin address
 git remote remove origin
 git remote -v
+git push origin --delete branchName
 ```
 # git 현재 hash 값 확인
 ```
