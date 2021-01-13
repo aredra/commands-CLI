@@ -301,6 +301,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 # 압축
 
 ```
+gzip filename
+gzip -d filename
 tar -cvfz test.tar // z 압축, v 메시지 출력, f 파일을 묶도록 지정, c,x
 find . -name "*.log"  -o -name "test.*" | xargs tar rvf test.tar
 ```
