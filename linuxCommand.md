@@ -313,3 +313,8 @@ find . -name "*.log"  -o -name "test.*" | xargs tar rvf test.tar
 iptables -L //리스트 조회
 iptables -I INPUT -p tcp --dport portNumber -j ACCEPT
 ```
+
+# 프로세스 제한 확인
+netstat -napo | fgrep nginx | awk '{print $6}' | sort | uniq -c  //nginx tcp 상태별 개수
+ulimit -Hn
+ulimit -Sn
