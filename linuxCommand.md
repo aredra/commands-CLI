@@ -79,9 +79,13 @@ ls;pwd
 # echo 출력 및 보내기 기능
 
 ```sh
-echo "hello'
+echo 'hello'
 echo $0 - 현재의 쉘 확인
 echo 'hellow world' > test.txt
+echo * >> test.txt
+
+# -e 특수문자 사용가능, -n 개행 안 함
+echo -ne 'hellow echo\a'
 ```
 
 # touch - 파일 생성
