@@ -29,6 +29,7 @@ git clone
 tail -f filename        # 실시간 로그 볼 때 많이 씀
 cat filename
 vi
+wc -w test.txt          # wc - word count?
 ```
 
 # IO Redirect
@@ -80,7 +81,7 @@ ls;pwd
 
 ```sh
 echo 'hello'
-echo $0 - 현재의 쉘 확인
+echo $0 # 현재의 쉘 확인
 echo 'hellow world' > test.txt
 echo * >> test.txt
 
@@ -165,6 +166,7 @@ top
 htop
 df -h, du
 lsof -i tcp
+lsof -i :"$port"
 netstat -antp | grep ${target}
 nslookup
 jobs
