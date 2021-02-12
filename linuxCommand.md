@@ -87,6 +87,9 @@ echo * >> test.txt
 
 # -e 특수문자 사용가능, -n 개행 안 함
 echo -ne 'hellow echo\a'
+
+printf "%02d\n" 1
+read -n 1 -p "How old are you?" v
 ```
 
 # touch - 파일 생성
@@ -106,6 +109,15 @@ cp *.log bak
 
 ```sh
 /bin
+```
+
+# 디렉토리 이동
+
+```sh
+# 왔다 갔다 하기
+cd -
+pushd
+popd
 ```
 
 # script sample
@@ -199,10 +211,12 @@ tail -f ~/log.log
 clear
 ```
 
-# alias
+# alias, function
 
 ```sh
 alias ll = 'ls -al' //대소문자 구별함
+function goDir() { cd /User/dir${1}; }
+no=1; while (( no < 10 )); do printf "%02d\n" $no; ((no++)); done
 ```
 
 # 사용자 및 추가
