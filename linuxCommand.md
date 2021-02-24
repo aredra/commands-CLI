@@ -1,3 +1,11 @@
+# 기초
+
+```sh
+# 변수 선언
+name=aredra
+ehco "My nickname is $name"
+```
+
 # brew
 
 ```sh
