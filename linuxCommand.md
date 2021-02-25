@@ -165,6 +165,7 @@ top
 htop
 df -h, du
 lsof -i tcp
+lsof -i :"$포트번호"
 netstat -antp | grep ${target}
 nslookup
 jobs
