@@ -1,5 +1,6 @@
 # node 관련 기본 명령어
-```
+
+```sh
 npm init
 npm init -y     //기본 설정으로 인스톨
 
@@ -30,7 +31,7 @@ npx lite-server
 npx babel app.js --plugins './my-babel-plugin.js'
 npx webpack --config webpack.dll.config.js
 npx eslint --fix src/**/*.js
-npx cross-env NODE_ENV=development 
+npx cross-env NODE_ENV=development
 npx eslint app.js --fix
 npx eslint --init
 npx prettier --write

@@ -1,6 +1,6 @@
 # 유저 생성 및 권한 부여
 
-```
+```sql
 alter user myuser with password 'password';
 create database mydb;
 create user myuser with password 'password';
@@ -21,13 +21,13 @@ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 
 # 세션 찾기
 
-```
+```sql
 select * from pg_stat_activity where datname='name';
 ```
 
 # pid로 세션 제거
 
-```
+```sql
 select pg_terminate_backend(pid);
 ```
 
@@ -40,7 +40,7 @@ pg_restore -v -h localhost -U postgres -p 8080 -C -d backup -F c /backup-2020052
 
 # pk 안 걸린 테이블 조회
 
-```
+```sql
 select
 table_name
 from information_schema."tables"
@@ -89,8 +89,49 @@ ALTER USER 'id'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password' 
 
 # etc
 
-```
+```sql
 explain sql
 select * from table for update
 union minus intersect
+```
+
+# array & json & string
+
+```sql
+with tmp as (
+  select
+    col1
+    , array_agg(col1) as col2
+  from
+    test_table
+)
+
+select
+  array_to_string(col2, ', ') as col_string
+from
+  tmp
+
+select
+  string_to_array(col2, ', ') as col_string
+from
+  tmp
+
+select row_to_json(tmp) from tmp;
+select row_to_json(row(col1, col2)) from tmp;
+
+select
+  col1
+  , array_agg(col2) as col_agg
+from
+  test_table
+group by
+  1
+
+select
+  col1
+  , string_agg(col1::text, ', ') as col_agg
+from
+  test_table
+group by
+  1
 ```

@@ -1,3 +1,11 @@
+# 기초
+
+```sh
+# 변수 선언
+name=aredra
+ehco "My nickname is $name"
+```
+
 # brew
 
 ```sh
@@ -29,6 +37,7 @@ git clone
 tail -f filename        # 실시간 로그 볼 때 많이 씀
 cat filename
 vi
+wc -w test.txt          # wc - word count?
 ```
 
 # IO Redirect
@@ -80,12 +89,15 @@ ls;pwd
 
 ```sh
 echo 'hello'
-echo $0 - 현재의 쉘 확인
+echo $0 # 현재의 쉘 확인
 echo 'hellow world' > test.txt
 echo * >> test.txt
 
 # -e 특수문자 사용가능, -n 개행 안 함
 echo -ne 'hellow echo\a'
+
+printf "%02d\n" 1
+read -n 1 -p "How old are you?" v
 ```
 
 # touch - 파일 생성
@@ -105,6 +117,15 @@ cp *.log bak
 
 ```sh
 /bin
+```
+
+# 디렉토리 이동
+
+```sh
+# 왔다 갔다 하기
+cd -
+pushd
+popd
 ```
 
 # script sample
@@ -165,7 +186,11 @@ top
 htop
 df -h, du
 lsof -i tcp
+<<<<<<< HEAD
 lsof -i :"$포트번호"
+=======
+lsof -i :"$port"
+>>>>>>> 98b8252ef7ba5ef04ebd5732292f168edd1f4de2
 netstat -antp | grep ${target}
 nslookup
 jobs
@@ -198,10 +223,12 @@ tail -f ~/log.log
 clear
 ```
 
-# alias
+# alias, function
 
 ```sh
 alias ll = 'ls -al' //대소문자 구별함
+function goDir() { cd /User/dir${1}; }
+no=1; while (( no < 10 )); do printf "%02d\n" $no; ((no++)); done
 ```
 
 # 사용자 및 추가
