@@ -4,6 +4,7 @@
 # 변수 선언
 name=aredra
 ehco "My nickname is $name"
+echo "${name}'s playgaround"
 ```
 
 # brew
