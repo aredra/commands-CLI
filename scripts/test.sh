@@ -14,3 +14,8 @@ fi
 echo "your name is $name"
 echo "your email is $email"
 echo "* is $all"
+echo "$#"
+echo $$
+echo $!
+echo $?
+echo $_
