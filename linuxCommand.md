@@ -5,6 +5,14 @@
 name=aredra
 ehco "My nickname is $name"
 echo "${name}'s playgaround"
+declare -a alnum=(a1 b1 c1) # -a 배열 옵션
+declare -i inum=78      # -i 정수형 변수
+inum=inum+1
+echo ${inum}
+echo ${alnum[0]}
+declare -r rPi=3.14     # readonly
+declare -x xpath="${HOME}/" # 변수 export
+export xpath="${HOME}/"
 ```
 
 # brew
@@ -152,6 +160,7 @@ chown -R owner:group
 ```sh
 locate *.log
 find . -name test.*
+find / -name test* -type d
 find . -name '*.log' | xargs grep -r --color=auto -n 2>/dev/null 'searchingText'
 whereis
 ls -alR /  > result.txt 2> error.log &

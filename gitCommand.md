@@ -15,6 +15,7 @@
 ```
 git config --global user.name name
 git config --local user.email email
+git config --unset credential.helper
 ```
 
 # 해당 디렉토리 git 생성

@@ -135,3 +135,19 @@ from
 group by
   1
 ```
+
+```sql
+-- select를 활용한 insert, update
+
+INSERT INTO test_a
+( uid, title, note, props, valid_ts, created_ts, created_uid, updated_ts, updated_uid )
+SELECT uid, title, note, props, valid_ts, created_ts, created_uid, updated_ts, updated_uid
+FROM test_b
+WHERE title = 'test1'
+
+UPDATE test_a
+   SET (props) = (SELECT props FROM test_b WHERE uid = test_a.uid AND props IS NOT NULL);
+
+UPDATE test_a
+   SET (title, note) = (SELECT title, note FROM test_b WHERE uid = test_a.uid);
+```
