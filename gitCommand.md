@@ -52,28 +52,34 @@ git pull origin branchName
 
 # 원격 오리진 저장소 추가, 삭제
 
-```
+```sh
 git remote add origin address
 git remote remove origin
 git remote -v
+
+# 삭제
 git push origin --delete branchName
+git push origin :oldBranchName
+
+# 교체한 브랜치 등록
+git push --set-upstream origin newBranchName
 ```
 
 # git 현재 hash 값 확인
 
-```
+```sh
 git rev-parse --short HEAD
 ```
 
 # 올리기
 
-```
+```sh
 git push origin branchName
 ```
 
 # stage 취소
 
-```
+```sh
 git reset HEAD fileName
 ```
 
@@ -99,6 +105,7 @@ git checkout -b branchName
 git branch branchName //git branch 현재 브랜치 확인
 git branch -r //원격 브랜치 확인
 git checkout -t origin/branchName // 원격브랜치 가져와서 로컬브랜치 생성 및 교체
+git branch -m $currentName $changedName
 ```
 
 # branch 삭제
