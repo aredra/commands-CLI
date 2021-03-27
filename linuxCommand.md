@@ -1,3 +1,7 @@
+# shell script 정적 분석도구
+
+> [shellcheck.net](shellcheck.net)
+
 # 기초
 
 ```sh
@@ -13,6 +17,14 @@ echo ${alnum[0]}
 declare -r rPi=3.14     # readonly
 declare -x xpath="${HOME}/" # 변수 export
 export xpath="${HOME}/"
+
+#변환
+tr [:lower:] [:upper:] <<< "Hello World"
+tr [:space:] '\t' <<< "Hello World"
+tr -s [:space:] <<< "Hello      World"
+
+cut -c2 test.txt
+cut -d':' -f1 /etc/passwd
 ```
 
 # brew
@@ -196,11 +208,7 @@ top
 htop
 df -h, du
 lsof -i tcp
-<<<<<<< HEAD
-lsof -i :"$포트번호"
-=======
 lsof -i :"$port"
->>>>>>> 98b8252ef7ba5ef04ebd5732292f168edd1f4de2
 netstat -antp | grep ${target}
 nslookup
 jobs
