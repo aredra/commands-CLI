@@ -9,13 +9,13 @@ grant all privileges on database mydb to myuser;
 
 # 완전 삭제
 
-```
+```sh
 rm -rf /usr/local/var/postgres && initdb /usr/local/var/postgres -E utf8
 ```
 
 # 실행
 
-```
+```sh
 pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 ```
 
@@ -23,6 +23,12 @@ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 
 ```sql
 select * from pg_stat_activity where datname='name';
+```
+
+# pg_hba reload
+
+```sql
+select pg_reload_conf();
 ```
 
 # pid로 세션 제거

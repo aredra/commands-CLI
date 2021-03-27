@@ -18,6 +18,22 @@ declare -r rPi=3.14     # readonly
 declare -x xpath="${HOME}/" # 변수 export
 export xpath="${HOME}/"
 
+#문자열 다루기
+echo ${#name} # 변수 길이 체크
+echo ${name:0:3} # 문자열 인덱스부터 길이만큼 출력
+echo ${name#a*e}
+echo ${name##a*a}
+echo ${name%a*is}
+echo ${name%%a*is}
+echo ${name//is} # 패턴 제거
+echo ${name/is/are} # 패턴 치환
+echo ${name/[Aa]redra/I}
+echo ${name//[Aa]redra/I}
+
+#globe 패턴
+echo b???
+echo [abcd]*
+
 #변환
 tr [:lower:] [:upper:] <<< "Hello World"
 tr [:space:] '\t' <<< "Hello World"
@@ -252,6 +268,13 @@ no=1; while (( no < 10 )); do printf "%02d\n" $no; ((no++)); done
 # 사용자 및 추가
 
 ```sh
+# 사용자 확인
+a=$(grep ^UID_MIN /etc/login.defs | awk '{print $2}')
+b=$(grep ^UID_MAX /etc/login.defs | awk '{print $2}')
+c=$(grep /bin/bash /etc/passwd | awk -F':' '{print $1}')
+d=$(awk -F':' -v "a=$a" -v "b=$b" '{ if ( $3>=a && $3<=b ) print $1}' /etc/passwd)
+echo -e "$c\n$d" | sort | uniq
+
 id
 who
 su - root
