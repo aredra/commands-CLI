@@ -132,6 +132,16 @@ git stash apply  //삭제 노 적용
 git stash clear
 ```
 
+# tag
+
+```
+git tag
+git tag ${tagName} ${commit-id}
+git tag -a ${tagName} -m "msg"
+git push origin ${tagName}
+git push origin --tags
+```
+
 # compare와 base merge
 
 ```
@@ -161,6 +171,7 @@ git log
 git log --pretty=oneline
 git log --oneline --graph
 gitk
+git show ${tagName}
 ```
 
 # conflict
