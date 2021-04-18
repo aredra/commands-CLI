@@ -13,6 +13,7 @@
 # 계정정보 수정
 
 ```
+git config --global --list
 git config --global user.name name
 git config --local user.email email
 git config --unset credential.helper
@@ -41,6 +42,19 @@ git add .
 
 ```
 git commit -m "comment"
+```
+
+# git tag 사용
+
+```
+git tag
+git tag name
+git tag -a name -m "msg"
+git show name
+git tag --delete name
+git push --delete remote tagName
+git push remote branch tagName
+git fetch --tags
 ```
 
 # origin 에서 내용 가져오기
