@@ -288,6 +288,17 @@ usermod -a -G groupname username
 groupadd groupname
 ```
 
+# systemctl
+
+```sh
+# 등록된 서비스 확인
+systemctl list-unit-files
+systemctl stop ${serviceName}
+systemctl start ${serviceName}
+systemctl status ${serviceName}
+systemctl restart ${serviceName}
+```
+
 # http 메시지 확인, 인터넷 연결 확인
 
 ```sh
