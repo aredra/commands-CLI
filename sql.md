@@ -142,6 +142,8 @@ group by
   1
 ```
 
+# select 기반 Insert, Update
+
 ```sql
 -- select를 활용한 insert, update
 
@@ -156,4 +158,40 @@ UPDATE test_a
 
 UPDATE test_a
    SET (title, note) = (SELECT title, note FROM test_b WHERE uid = test_a.uid);
+```
+
+# postgresql 시간값 다루기
+
+```sql
+select current_timestamp; -- 현재 타임스탬프
+
+select now();             -- 위와 동일
+
+select current_date;      -- 현재 날짜
+
+select current_time;      -- 현재 시간
+
+-- 현재 시간값에서 1일 빼기 
+select current_timestamp - interval '1 day';
+
+-- 현재 시간값에서 1달 더하기
+select current_timestamp + interval '1 month';
+
+-- 시간값 끼리 계산
+select now() - (now() - interval '10 year');    
+
+-- 현재 시간값에서 'YYYY-MM-DD' 포맷으로 변환
+select to_char(now(), 'YYYY-MM-DD');            
+
+-- 해당 포맷의 문자열을 시간값으로 변환
+select to_timestamp('20210619', 'YYYYMMDD')
+
+-- 현재 시간값에서 day 값만 추출
+select extract(day from now());
+
+-- 현재 시간값에서 month 값만 추출
+select extract(month from now());
+
+-- 날짜 미만 시간값 버림
+select date_trunc('day', now());
 ```
