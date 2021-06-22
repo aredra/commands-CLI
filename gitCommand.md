@@ -52,6 +52,7 @@ git tag name
 git tag -a name -m "msg"
 git show name
 git tag --delete name
+git push remote --tags
 git push --delete remote tagName
 git push remote branch tagName
 git fetch --tags
