@@ -195,3 +195,13 @@ select extract(month from now());
 -- 날짜 미만 시간값 버림
 select date_trunc('day', now());
 ```
+
+## padding 추가
+
+```sql
+-- lpad, rpad 가 있고 사용은 아래와 같다.
+-- lpad or rpad(텍스트, 자릿수, 채울 문자)
+
+select lpad(t.hour, 2, '0') from test_table t
+select rpad(t.hour, 2, '0') from test_table t
+```
