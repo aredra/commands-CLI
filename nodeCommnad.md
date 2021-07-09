@@ -26,7 +26,7 @@ npm i husky
 npm i lint-staged
 npm i lodash.throttle
 
-npx serve ./build
+npx serve -s ./build  # -s 어떤 라우팅도 index.html 로 spa 옵션
 npx lite-server
 npx babel app.js --plugins './my-babel-plugin.js'
 npx webpack --config webpack.dll.config.js
@@ -35,6 +35,9 @@ npx cross-env NODE_ENV=development
 npx eslint app.js --fix
 npx eslint --init
 npx prettier --write
+npx husky install
+npx husky add .husky/pre-commit "npm test", "npx lint-staged"
+
 
 nvm use version-name
 nvm list
