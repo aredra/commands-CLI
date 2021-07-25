@@ -1,6 +1,6 @@
 # docker 설치
 
-```
+```sh
 sudo yum install docker-io -- yes
 ```
 
@@ -59,13 +59,56 @@ docker stop webserver
 docker start webserver
 ```
 
+# 검색
+
+```sh
+docker search --limit 10 nginx
+docker search --filter=stars=1000 nginx
+
+```
+
+# DCT(Docker Content Trust) 사용
+
+```sh
+# 사용
+export DOCKER_CONTENT_TRUST=1
+
+# 미사용
+export DOCKER_CONTENT_TRUST=0
+```
+
 # docker 이미지, 삭제, 생성, 실행
 
 ```sh
-docker rm --volumes --force "name-container"
-docker pull address
-docker create --restart=no --name ""\options
-docker start --attach "name-container"
+# -a 모든 태그 url도 가능 프로토콜 부분은 제외
+docker image pull centos:7
+
+docker image ls
+docker image inspect ${imageName}
+docker image tag nginx ${userName}/${imageName}${tagName}
+
+# 삭제
+docker image rm ${imageName}
+docekr image prune -a
+
+# upload
+docker image push ${imageName}
+```
+
+# container 다루기
+
+```sh
+docker container create
+docker container ps
+docker container stop
+docker container start
+docker container restart
+docker container pause
+docker container rm
+
+# -a: 표준입출력,에러, -d: 백그라운드
+docker container run
+
 ```
 
 # docker Hub와 로그인 및 검색
