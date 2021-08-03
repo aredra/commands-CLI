@@ -17,6 +17,9 @@ git config --global --list
 git config --global user.name name
 git config --local user.email email
 git config --unset credential.helper
+
+# 키체인 삭제
+git credential-osxkeychain erase
 ```
 
 # 해당 디렉토리 git 생성
