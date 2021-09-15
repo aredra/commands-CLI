@@ -73,7 +73,8 @@ git pull origin branchName
 ```sh
 git remote add origin address
 git remote remove origin
-git remote -v
+git remote -v     # remote 확인
+git remote set-url origin https://github.com/aredra/repo
 
 # 삭제
 git push origin --delete branchName
