@@ -49,4 +49,11 @@ nvm alias default version-name // 버전 기본값 설정
 open index.html
 
 node_modules/.bin/webpack --mode development --entry ./src/app.js --output dist/main.js
+
+# yarn berry 쓰기
+yarn set version berry
+yarn install
+yarn add ${packageName} --dev
+yarn up ${packageName}@[version or tag]
+yarn remove ${packageName}
 ```
