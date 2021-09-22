@@ -1,3 +1,5 @@
+# [Git](https://git-scm.com/)
+
 ### 로컬pc - workspace - 로컬저장소(.git) - stage - commit - push
 
 ### stage에 없을 경우 새로 생성된 파일의 경우 tracking 되지 않음
@@ -189,6 +191,22 @@ git merge $working_branch
 
 ```sh
 git rm -r --cached .
+```
+
+# 서브모듈
+```sh
+# git clone 시 서브모듈이 안 가져왔을 때
+git submodule init
+git submodule update
+
+git submodule update --init --recursive
+
+# 서브모듈 붙이기
+git submodule add $resourcePath
+
+# 서브모듈 fetch && update
+git submodule update --remote $submoduleName
+git diff --cached --submodule
 ```
 
 # etc
