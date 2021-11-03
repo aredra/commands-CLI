@@ -291,12 +291,37 @@ groupadd groupname
 # systemctl
 
 ```sh
-# 등록된 서비스 확인
+# 전체 서비스 확인 -
+service --status-all
+
+# 실행중인 서비스 확인
+service --status-all | grep +
+
+# 등록된 서비스 확인 - RHEL 계열
 systemctl list-unit-files
 systemctl stop ${serviceName}
 systemctl start ${serviceName}
 systemctl status ${serviceName}
 systemctl restart ${serviceName}
+systemctl enable ${serviceName}
+journalctl -u ${serviceName}
+
+# 서비스 등록
+/etc/systemd/system/${serviceName}.service
+# 아래 내용 등록
+[Unit]
+Description=aibos driver api
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/data/start-application.sh
+ExecStop=/data/stop-application.sh
+[Install]
+WantedBy=multi-user.target
 ```
 
 # http 메시지 확인, 인터넷 연결 확인
