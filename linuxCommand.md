@@ -178,6 +178,7 @@ cp *.log bak
 # 파일에 실행권한 주기
 
 ```sh
+ls -ltr ${target}
 chmod +x backup
 chmod 600 ${target}
 chown -R owner:group
