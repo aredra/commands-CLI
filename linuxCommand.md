@@ -382,13 +382,6 @@ ls -lZd /home/test/
 chcon -R -t httpd_sys_content_t /home/test/
 ```
 
-# 자바 설치 - brew
-
-```sh
-brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk8
-```
-
 # 서버 가동시간 확인
 
 ```sh
@@ -449,4 +442,26 @@ ulimit -Sn
 ln test.txt test.txt.hd
 # 심볼릭링크 만들기
 ln -s test.txt test.txt.sym
+```
+
+# Mac - java
+
+```sh
+# 설치된 자바 확인
+/usr/libexec/java_home -V
+
+#
+brew tap adoptopenjdk/openjdk
+brew search jdk
+brew install --cask adoptopenjdk11
+
+jstat -gcutil -t -h20 14385 3000
+
+# 메모리 확인
+jcmd 14385 GC.class_histogram
+jmap -histo 14385
+
+# dump 뜨기
+jcmd 14385 GC.heap_dump heap_dump.hprof
+jmap -dump:file=heap_dump.hprof 14385
 ```
