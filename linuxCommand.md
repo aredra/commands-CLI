@@ -422,8 +422,70 @@ find . -name "*.log"  -o -name "test.*" | xargs tar rvf test.tar
 # iptables
 
 ```sh
-iptables -L //리스트 조회
+
+# -A (--append) : 새로운 규칙을 추가.
+# -D (--delete) : 규칙을 삭제.
+# -C (--check) : 패킷을 테스트.
+# -R (--replace) : 새로운 규칙으로 교체.
+# -I (--insert) : 새로운 규칙을 삽입.
+# -L (--list) : 규칙을 출력.
+# -F (--flush) : chain으로부터 규칙을 모두 삭제.
+# -Z (--zero) : 모든 chain의 패킷과 바이트 카운터 값을 0으로 만듬.
+# -N (--new) : 새로운 chain을 만듬.
+# -X (--delete-chain) : chain을 삭제.
+# -P (--policy) : 기본정책을 변경.
+
+# --source (-s) : 출발지 IP주소나 네트워크와의 매칭
+# --destination (-d) : 목적지 ip주소나 네트워크와의 매칭
+# --protocol (-p) : 특정 프로토콜과의 매칭
+# --in-interface (i) : 입력 인테페이스
+# --out-interface (-o) : 출력 인터페이스
+# --state : 연결 상태와의 매칭
+# --string : 애플리케이션 계층 데이터 바이트 순서와의 매칭
+# --comment : 커널 메모리 내의 규칙과 연계되는 최대 256바이트 주석
+# --syn (-y) : SYN 패킷을 허용하지 않는다.
+# --fragment (-f) : 두 번째 이후의 조각에 대해서 규칙을 명시한다.
+# --table (-t) : 처리될 테이블
+# --jump (-j) : 규칙에 맞는 패킷을 어떻게 처리할 것인가를 명시한다.
+# --match (-m) : 특정 모듈과의 매치
+
+# ACCEPT : 패킷을 받아들임.
+# DROP : 패킷을 버림(패킷이 전송된 적이 없던 것처럼).
+# REJECT : 패킷을 버리고 이와 동시에 적절한 응답 패킷을 전송.
+# LOG : 패킷을 syslog에 기록.
+# RETURN : 호출 체인 내에서 패킷 처리를 지속함.
+
+# 상태 확인
+iptables -nvL
+
+# 특정 ip 차단
+iptables -I INPUT -s xxx.xxx.xxx.xxx -j DROP
+# 특정 ip 허용
+iptables -A INPUT -s xxx.xxx.xxx.xxx -j ACCEPT
+# 특정 port 차단
+iptables -A INPUT -p tcp --dport xxxx -j DROP
+# 특정 ip, port 허용
+iptables -A INPUT -p tcp -s xxx.xxx.xxx.xxx --dport xxxx -j ACCEPT
+
+# 모든 규칙 삭제
+iptables --flush
+
+# 수정 전 백업 및 복구
+/sbin/iptables-save > /etc/iptables.rules
+/sbin/iptables-restore < /etc/iptables.rules
+
+iptables -L # 리스트 조회
 iptables -I INPUT -p tcp --dport portNumber -j ACCEPT
+```
+
+## 복구 예제
+
+```sh
+#!/bin/bash
+
+cat /etc/iptables.rules
+
+/sbin/iptables-restore < /etc/iptables.rules
 ```
 
 # 프로세스 제한 확인
