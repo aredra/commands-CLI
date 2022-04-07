@@ -195,6 +195,11 @@ whereis
 ls -alR /  > result.txt 2> error.log &
 ```
 
+# 파일명 변경
+```sh
+for f in *.기존; do mv -- "$f" "${f%.기존}.신규"; done
+```
+
 # OS 및 버전 확인
 
 ```sh
