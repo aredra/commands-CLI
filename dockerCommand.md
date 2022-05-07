@@ -46,6 +46,9 @@ docker image ls
 # nginx 구동 예제 --name: 컨테이너 이름을 webserver로, -d: 데몬으로 돌리고 ID, -p 80에 대하 접근허가
 docker container run --name webserver -d -p 80:80 nginx
 
+# -it 실행한 컨테이너 내부로 들어가기, -e 환경변수 설정
+docker contser run -d -it -e foo=bar centos /bin/bash
+
 # 컨테이너 상태확인
 docker container ps
 
@@ -105,6 +108,8 @@ docker container start
 docker container restart
 docker container pause
 docker container rm
+docker container inspect
+docker container logs
 
 # -a: 표준입출력,에러, -d: 백그라운드
 docker container run
@@ -116,4 +121,10 @@ docker container run
 ```sh
 docker login
 docker search
+```
+
+# 컨테이너 접속하기
+
+```sh
+docker exec -it {containerId} /bin/bash
 ```

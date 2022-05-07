@@ -330,6 +330,7 @@ WantedBy=multi-user.target
 curl -i https://helloworld.com
 dig
 telnet 127.0.0.1 8080
+nc -z localhost 8080
 ping
 dig +trace google.com
 netstat -an -ptcp | grep LISTEN
