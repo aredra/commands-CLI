@@ -529,10 +529,14 @@ ln -s test.txt test.txt.sym
 # 설치된 자바 확인
 /usr/libexec/java_home -V
 
-#
+# 오픈 자바 설치
 brew tap adoptopenjdk/openjdk
 brew search jdk
+brew install cask
 brew install --cask adoptopenjdk11
+
+# 여러버전 사용할 때
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 
 jstat -gcutil -t -h20 14385 3000
 
