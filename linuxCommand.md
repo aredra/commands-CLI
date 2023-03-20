@@ -196,6 +196,7 @@ ls -alR /  > result.txt 2> error.log &
 ```
 
 # 파일명 변경
+
 ```sh
 for f in *.기존; do mv -- "$f" "${f%.기존}.신규"; done
 ```
@@ -495,13 +496,22 @@ cat /etc/iptables.rules
 /sbin/iptables-restore < /etc/iptables.rules
 ```
 
-# 프로세스 제한 확인
+# 프로세스, 파일 제한 확인
 
 ```sh
 # nginx tcp 상태별 개수
 netstat -napo | fgrep nginx | awk '{print $6}' | sort | uniq -c
 ulimit -Hn
 ulimit -Sn
+ulimit -a
+
+ls -l /proc/${pid}/fd | wc -l
+lsof -p ${pid} | wc -l
+cat /proc/sys/fs/file-max # 시스템 최대 갯수 확인
+```
+
+```
+
 ```
 
 # 링크 관련
